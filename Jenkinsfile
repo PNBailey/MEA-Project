@@ -1,20 +1,20 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
-            steps {
-                sh '''
-                docker build -t 52pbailey/mea-project .
-                '''
-           }
-        }
-        stage('Push') {
-            steps {
-                sh '''
-                docker push 52pbailey/mea-project
-                '''
-            }
-        }
+        // stage('Build') {
+        //     steps {
+        //         sh '''
+        //         docker build -t 52pbailey/mea-project .
+        //         '''
+        //    }
+        // }
+        // stage('Push') {
+        //     steps {
+        //         sh '''
+        //         docker push 52pbailey/mea-project
+        //         '''
+        //     }
+        // }
         // stage('Deploy') {
         //     steps {
         //         sh '''
