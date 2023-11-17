@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN pip install -r "requirements.txt"
+RUN pip install -r "requirements.txt" --force-reinstall
 
 EXPOSE 8080
 
