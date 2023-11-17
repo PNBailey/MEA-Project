@@ -7,7 +7,7 @@ build() {
 
 push() {
     echo "Jenkins server: pushing images"
-    docker push 52pbailey/mea-project
+    docker push c
 }
 
 deploy() {
@@ -21,6 +21,8 @@ deploy() {
 
     docker stop mea-project && echo "mea-project stopped" || echo "mea-project already stopped"
     docker rm mea-project && echo "mea-project removed" || echo "mea-project does not exist"
+
+    docker rmi 52pbailey/mea-project && echo "52pbailey/mea-project removed" || echo "52pbailey/mea-project does not exist"
 
     echo "Deploy server: stopping, removing and creating network"
 
