@@ -43,10 +43,10 @@ pipeline {
                     PORT = "8080"
                     // NETWORK = mea-projectNetwork
                 }
-                sh "
+                sh '''
                 ssh jenkins@paulb-deploy <<EOF
                 sh setup.sh
-                "
+                '''
             }
         }
         //  stage('Deploy') {
