@@ -17,10 +17,10 @@ pipeline {
             }
         }
         stage('Deploy') {
-            script {
-                PORT = 8080
-            }
             steps {
+                script {
+                    PORT = 8080
+                }
                 sh '''
                 ssh jenkins@paulb-deploy <<EOF
 
