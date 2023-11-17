@@ -17,6 +17,9 @@ pipeline {
             }
         }
         stage('Deploy') {
+            script {
+                PORT = 8080
+            }
             steps {
                 sh '''
                 ssh jenkins@paulb-deploy <<EOF
@@ -31,7 +34,7 @@ pipeline {
                 docker network rm mea-projectNetwork && echo "network removed" || echo "network does not exist"
                 docker network create mea-projectNetwork
 
-                docker run -d -p 80:8080 --name mea-project --network mea-projectNetwork 52pbailey/mea-project
+                docker run -d -p 80:${PORT} --name mea-project --network mea-projectNetwork 52pbailey/mea-project
                 '''
             }
         }
