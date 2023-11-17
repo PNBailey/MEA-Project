@@ -13,9 +13,9 @@ push() {
 deploy() {
     echo "Jenkins server: connecting to deploy server via ssh"
 
-    sh ''' 
-        ssh jenkins@paulb-deploy <<EOF
-    '''
+   
+    ssh jenkins@paulb-deploy <<EOF
+   
 
     echo "Deploy server: pulling images from Docker Hub"
 
