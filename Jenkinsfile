@@ -23,7 +23,7 @@ pipeline {
                 docker pull 52pbailey/mea-project
 
                 docker stop mea-project && echo "mea-project stopped" || echo "mea-project already stopped"
-                docker rm mea-project && echo"mea-project removed" || echo "mea-project does not exist"
+                docker rm mea-project && echo "mea-project removed" || echo "mea-project does not exist"
 
                 docker network rm mea-projectNetwork && echo "network removed" || echo "network does not exist"
                 docker network create mea-projectNetwork
