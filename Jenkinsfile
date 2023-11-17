@@ -22,13 +22,13 @@ pipeline {
 
                 docker pull 52pbailey/mea-project
 
-                docker stop flask-app && echo "mea-project stopped" || echo "mea-project already stopped"
-                docker rm flask-app && echo"mea-project removed" || echo "mea-project does not exist"
+                docker stop mea-project && echo "mea-project stopped" || echo "mea-project already stopped"
+                docker rm mea-project && echo"mea-project removed" || echo "mea-project does not exist"
 
                 docker network rm mea-projectNetwork && echo "network removed" || echo "network does not exist"
                 docker network create mea-projectNetwork
 
-                docker run -d --name mea-project --network mea-project 52pbailey/mea-project
+                docker run -d --name mea-project --network mea-projectNetwork 52pbailey/mea-project
                 '''
             }
         }
