@@ -1,3 +1,5 @@
+#!/bin/bash
+
 build() {
     echo "Jenkins server: building images"
     docker build -t 52pbailey/mea-project .
