@@ -19,7 +19,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    PORT = 8080
+                    PORT = "8080"
                     // NETWORK = mea-projectNetwork
                 }
                 sh '''
