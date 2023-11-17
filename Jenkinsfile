@@ -4,6 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
+                docker rm 52pbailey/mea-project && echo "52pbailey/mea-project removed" || echo "52pbailey/mea-project does not exist"
                 docker build -t 52pbailey/mea-project .
                 '''
            }
@@ -24,6 +25,8 @@ pipeline {
 
                 docker stop mea-project && echo "mea-project stopped" || echo "mea-project already stopped"
                 docker rm mea-project && echo "mea-project removed" || echo "mea-project does not exist"
+
+                docker rm 52pbailey/mea-project && echo "52pbailey/mea-project removed" || echo "52pbailey/mea-project does not exist"
 
                 docker network rm mea-projectNetwork && echo "network removed" || echo "network does not exist"
                 docker network create mea-projectNetwork
