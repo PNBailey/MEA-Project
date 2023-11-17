@@ -28,7 +28,7 @@ pipeline {
                 docker network rm mea-projectNetwork && echo "network removed" || echo "network does not exist"
                 docker network create mea-projectNetwork
 
-                docker run -d --name mea-project --network mea-projectNetwork 52pbailey/mea-project
+                docker run -d -p 8080:8080 --name mea-project --network mea-projectNetwork 52pbailey/mea-project
                 '''
             }
         }
