@@ -34,7 +34,7 @@ pipeline {
         // }
          stage('Deploy') {
             steps {
-                sh 'sh startup.sh'
+                sh "sh startup.sh"
             }
         }
     }
