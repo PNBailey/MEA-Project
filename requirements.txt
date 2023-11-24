@@ -7,7 +7,7 @@ charset-normalizer
 click
 black
 colorama
-Flask
+Flask>=2.2.5
 Flask-API
 Flask-SQLAlchemy
 greenlet
