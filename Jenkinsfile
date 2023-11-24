@@ -70,7 +70,7 @@ pipeline {
     agent any
     environment {
         GCR_CREDENTIALS_ID = 'GCRCredential'
-        IMAGE_NAME = 'test-image-7'
+        IMAGE_NAME = 'test-build-paulb-1:latest'
         GCR_URL = 'gcr.io/lbg-mea-15'
         PROJECT_ID = 'lbg-mea-15'
         CLUSTER_NAME = 'paulb-cluster'
