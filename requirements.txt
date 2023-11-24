@@ -5,6 +5,7 @@ certifi
 cffi
 charset-normalizer
 click
+black
 colorama
 Flask
 Flask-API
