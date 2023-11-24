@@ -106,9 +106,6 @@ pipeline {
             steps {
                 script {
                     sh '''
-                    // Switching back to jenkins service account
-                    sudo su - jenkins
-                    gcloud auth activate-service-account paulb-jenkins-service-account@lbg-mea-15.iam.gserviceaccount.com --key-file=lbg-mea-15-9b06a17a8a91.json
                     sleep 50
                     export stage_IP=\$(kubectl get svc -o json --namespace stage | jq '.items[] | select(.metadata.name == "nginx") | .status.loadBalancer.ingress[0].ip' | tr -d '"')
                     pip3 install requests
