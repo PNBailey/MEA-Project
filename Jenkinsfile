@@ -88,9 +88,9 @@ pipeline {
                     // Configure Docker to use gcloud as a credential helper
                     sh 'gcloud auth configure-docker --quiet'
                     // Build the Docker image
-                    sh "docker build -t ${GCR_URL}/${IMAGE_NAME}:latest ."
+                    sh "docker build -t ${GCR_URL}/${IMAGE_NAME}:${BUILD_NUMBER} ."
                     // Push the Docker image to GCR
-                    sh "docker push ${GCR_URL}/${IMAGE_NAME}:latest"
+                    sh "docker push ${GCR_URL}/${IMAGE_NAME}:${BUILD_NUMBER}"
                 }
             }
         }
