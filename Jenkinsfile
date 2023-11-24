@@ -110,7 +110,6 @@ pipeline {
                     sleep 50
                     export stage_IP=\$(kubectl get svc -o json --namespace stage | jq '.items[] | select(.metadata.name == "nginx") | .status.loadBalancer.ingress[0].ip' | tr -d '"')
                     pip3 install requests
-                    pip3 install -r "requirements.txt"
                     python3 test-app.py
                     '''
                 }
