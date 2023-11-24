@@ -26,14 +26,14 @@ class ItemModel(db.Model):
         self.price = price
         self._id = _id
 
-    def __str__(self) -> str:
+    def __str__(self)
         """
         string representation method for object
         """
         return f"'description':{self.description},'name':{self.name},'price':{self.price},'_id':{self._id}"
 
     @property
-    def serialize(self) -> dict[str, str | int | float]:
+    def serialize(self)
         """
         serializable format for object
         """
