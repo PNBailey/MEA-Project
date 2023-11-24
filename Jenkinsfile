@@ -102,17 +102,14 @@ pipeline {
                 }
             }
         }
-         stage('QC Deploy') {
+        stage('QC Deploy') {
             steps {
-                script {
-                    sh '''
-                    gcloud config set account paulb-jenkins-service-account@lbg-mea-15.iam.gserviceaccount.com
-                    sleep 50
-                    export stage_IP=\$(kubectl get svc -o json --namespace stage | jq '.items[] | select(.metadata.name == "nginx") | .status.loadBalancer.ingress[0].ip' | tr -d '"')
-                    pip3 install requests
-                    python3 test-app.py
-                    '''
-                }
+                sh '''
+                gcloud config set account paulb-jenkins-service-account@lbg-mea-15.iam.gserviceaccount.com
+                export STAGING_IP=\$(kubectl get svc -o json --namespace stage | jq '.items[] | select(.metadata.name == "nginx") | .status.loadBalancer.ingress[0].ip' | tr -d '"')
+                pip3 install requests
+                python3 test-app.py
+                '''
             }
         }
     }
